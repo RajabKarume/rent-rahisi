@@ -14,51 +14,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_161332) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "apartments", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.integer "number_of_houses"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "username"
-    t.string "image"
-    t.string "password_digest"
-    t.string "location"
-    t.integer "admin_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "handymen", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "location"
-    t.string "description"
-    t.integer "admin_id"
-    t.string "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "speciality"
-    t.string "email"
-    t.string "image"
-  end
-
-  create_table "jobs", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "budget"
-    t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,23 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_161332) do
     t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer "handyman_id"
-    t.integer "customer_id"
-    t.string "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string "comment"
-    t.integer "handyman_id"
-    t.integer "customer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "votes"
   end
 
   create_table "tenants", force: :cascade do |t|
