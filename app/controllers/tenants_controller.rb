@@ -27,7 +27,7 @@ class TenantsController < ApplicationController
         Tenant.find_by(id: params[:id])
     end
     def tenant_params
-        params.permit(:name, :email, :house_number, :phone_number :rent)
+        params.permit(:name, :email, :house_number, :phone_number, :rent)
     end
 
 end

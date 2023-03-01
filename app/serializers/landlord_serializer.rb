@@ -1,3 +1,5 @@
 class LandlordSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :username, :full_name
+  has_many :apartments
+
 end
